@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier — Nuru Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">ND</div>
+            <span>Nuru Digital</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="entreprises.html">Entreprises</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="connexion.html" class="btn btn-outline btn-sm">Connexion</a>
+            <a href="connexion.html" class="btn btn-primary btn-sm">Créer un compte</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-label">🛒 Panier</span>
+            <h1>Votre panier d’achats</h1>
+            <p>Retrouvez ici les produits et services que vous avez choisis pour acheter.</p>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="container">
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Article</th>
+                            <th>Quantité</th>
+                            <th>Prix unitaire</th>
+                            <th>Total</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sac artisanal premium</td>
+                            <td>1</td>
+                            <td>$50.00</td>
+                            <td>$50.00</td>
+                            <td><a href="#" class="btn btn-outline btn-sm">Retirer</a></td>
+                        </tr>
+                        <tr>
+                            <td>Formation vente digitale</td>
+                            <td>1</td>
+                            <td>$75.00</td>
+                            <td>$75.00</td>
+                            <td><a href="#" class="btn btn-outline btn-sm">Retirer</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top:1.5rem;">
+                <div class="card" style="padding:1rem;margin-bottom:1rem;">
+                    <h3 style="margin-bottom:0.5rem;">Comment souhaitez-vous payer ?</h3>
+                    <div style="display:flex;gap:1rem;flex-wrap:wrap;align-items:center;">
+                        <label style="display:flex;align-items:center;gap:8px;"><input type="radio" name="payment-method" value="mobile" checked> Mobile money</label>
+                        <label style="display:flex;align-items:center;gap:8px;"><input type="radio" name="payment-method" value="card"> Carte bancaire</label>
+                        <label style="display:flex;align-items:center;gap:8px;"><input type="radio" name="payment-method" value="cash"> Cash</label>
+                    </div>
+
+                    <div id="mobile-options" style="margin-top:1rem;">
+                        <label style="display:block;margin-bottom:0.5rem;font-weight:600;">Choisir le réseau Mobile money</label>
+                        <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+                            <label style="display:flex;align-items:center;gap:8px;"><input type="radio" name="mobile-network" value="airtel"> Airtel Money</label>
+                            <label style="display:flex;align-items:center;gap:8px;"><input type="radio" name="mobile-network" value="mpesa"> M-PESA</label>
+                            <label style="display:flex;align-items:center;gap:8px;"><input type="radio" name="mobile-network" value="orange"> Orange Money</label>
+                        </div>
+                        <div class="form-group" style="margin-top:0.8rem;">
+                            <label for="mobile-number">Numéro Mobile money</label>
+                            <input id="mobile-number" type="tel" placeholder="Ex: +243 97X XXX XXX" inputmode="tel">
+                        </div>
+                    </div>
+
+                    <div id="card-options" style="margin-top:1rem;display:none;">
+                        <label style="display:block;margin-bottom:0.5rem;font-weight:600;">Type de carte</label>
+                        <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+                            <label style="display:flex;align-items:center;gap:8px;"><input type="radio" name="card-type" value="visa"> Visa</label>
+                            <label style="display:flex;align-items:center;gap:8px;"><input type="radio" name="card-type" value="mastercard"> Mastercard</label>
+                        </div>
+                        <div class="form-group" style="margin-top:0.8rem;">
+                            <label for="card-number">Numéro de carte</label>
+                            <input id="card-number" type="text" placeholder="XXXX XXXX XXXX XXXX" inputmode="numeric" maxlength="19">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display:flex;justify-content:flex-end;gap:1rem;flex-wrap:wrap;align-items:center;">
+                    <div style="background: var(--surface);padding:1rem 1.5rem;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);min-width:220px;">
+                        <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:0.5rem;">Total du panier</p>
+                        <div style="font-size:1.75rem;font-weight:800;">$125.00</div>
+                    </div>
+                    <a href="connexion.html" id="checkoutBtn" class="btn btn-primary btn-lg">Valider ma commande</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Nuru Digital</h4>
+                    <p style="font-size:0.85rem;">La plateforme digitale de tous les commerçants.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens rapides</h4>
+                    <a href="index.html">Accueil</a>
+                    <a href="catalogue.html">Catalogue</a>
+                    <a href="entreprises.html">Entreprises</a>
+                    <a href="publication.html">Publication</a>
+                    <a href="a-propos.html">À propos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+            document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
+        }
+
+        // Payment method handling
+        const paymentRadios = document.querySelectorAll('input[name="payment-method"]');
+        const mobileOptions = document.getElementById('mobile-options');
+        const cardOptions = document.getElementById('card-options');
+        const mobileNumber = document.getElementById('mobile-number');
+        const cardNumber = document.getElementById('card-number');
+
+        function updatePaymentUI() {
+            const selected = document.querySelector('input[name="payment-method"]:checked')?.value;
+            if (selected === 'mobile') {
+                mobileOptions.style.display = '';
+                cardOptions.style.display = 'none';
+                if (mobileNumber) mobileNumber.required = true;
+                if (cardNumber) cardNumber.required = false;
+            } else if (selected === 'card') {
+                mobileOptions.style.display = 'none';
+                cardOptions.style.display = '';
+                if (mobileNumber) mobileNumber.required = false;
+                if (cardNumber) cardNumber.required = true;
+            } else { // cash
+                mobileOptions.style.display = 'none';
+                cardOptions.style.display = 'none';
+                if (mobileNumber) mobileNumber.required = false;
+                if (cardNumber) cardNumber.required = false;
+            }
+        }
+
+        paymentRadios.forEach(r => r.addEventListener('change', updatePaymentUI));
+        // initialize UI
+        updatePaymentUI();
+    </script>
+</body>
+</html>

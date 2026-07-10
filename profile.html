@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil — Nuru Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">ND</div>
+            <span>Nuru Digital</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="entreprises.html">Entreprises</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="connexion.html" class="btn btn-outline btn-sm">Connexion</a>
+            <a href="connexion.html" class="btn btn-primary btn-sm">Créer un compte</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-label">👤 Profil</span>
+            <h1>Votre profil</h1>
+            <p>Consultez et modifiez vos informations publiques et de contact.</p>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="container">
+            <div class="profile-grid">
+                <div class="profile-card">
+                    <h3>Informations</h3>
+                    <form id="profileForm">
+                        <label>Nom complet
+                            <input type="text" id="name" placeholder="Votre nom complet">
+                        </label>
+                        <label>Pseudo / Boutique
+                            <input type="text" id="displayName" placeholder="Nom public ou boutique">
+                        </label>
+                        <label>Email
+                            <input type="email" id="email" placeholder="votre@email.com">
+                        </label>
+                        <label>Téléphone
+                            <input type="tel" id="phone" placeholder="+237 6...">
+                        </label>
+                        <label>Bio
+                            <textarea id="bio" rows="4" placeholder="Parlez brièvement de vous ou de votre boutique"></textarea>
+                        </label>
+                        <div style="display:flex;gap:8px;margin-top:12px;">
+                            <button type="button" id="saveProfile" class="btn btn-primary">Enregistrer</button>
+                            <button type="button" id="resetProfile" class="btn btn-outline">Réinitialiser</button>
+                        </div>
+                    </form>
+                </div>
+                <aside class="profile-preview">
+                    <h3>Aperçu public</h3>
+                    <div class="preview-card">
+                        <div class="preview-hero">
+                            <div class="preview-avatar">ND</div>
+                            <div>
+                                <h4 id="pvDisplayName">--</h4>
+                                <p id="pvBio">Aucune description fournie.</p>
+                                <p id="pvContact" style="font-size:0.9rem;color:var(--text-light)"></p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Nuru Digital</h4>
+                    <p style="font-size:0.85rem;">La plateforme digitale de tous les commerçants.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens rapides</h4>
+                    <a href="index.html">Accueil</a>
+                    <a href="catalogue.html">Catalogue</a>
+                    <a href="entreprises.html">Entreprises</a>
+                    <a href="publication.html">Publication</a>
+                    <a href="panier.html">Panier</a>
+                    <a href="a-propos.html">À propos</a>
+                    <a href="dashboard.html">Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+            document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
+        }
+
+        // Profile save/load
+        const STORAGE_KEY = 'nuru-profile';
+        function loadProfile(){
+            try{
+                const raw = localStorage.getItem(STORAGE_KEY);
+                if(!raw) return {};
+                return JSON.parse(raw);
+            }catch(e){return{}};
+        }
+        function saveProfile(data){
+            try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); }catch(e){}
+        }
+        function applyToForm(data){
+            document.getElementById('name').value = data.name || '';
+            document.getElementById('displayName').value = data.displayName || '';
+            document.getElementById('email').value = data.email || '';
+            document.getElementById('phone').value = data.phone || '';
+            document.getElementById('bio').value = data.bio || '';
+            updatePreview();
+        }
+        function collectFromForm(){
+            return {
+                name: document.getElementById('name').value.trim(),
+                displayName: document.getElementById('displayName').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                bio: document.getElementById('bio').value.trim()
+            };
+        }
+        function updatePreview(){
+            const d = collectFromForm();
+            document.getElementById('pvDisplayName').textContent = d.displayName || d.name || '—';
+            document.getElementById('pvBio').textContent = d.bio || 'Aucune description fournie.';
+            const contact = [];
+            if(d.email) contact.push(d.email);
+            if(d.phone) contact.push(d.phone);
+            document.getElementById('pvContact').textContent = contact.join(' • ');
+        }
+
+        document.getElementById('saveProfile').addEventListener('click', ()=>{
+            const data = collectFromForm();
+            saveProfile(data);
+            applyToForm(data);
+            alert('Profil enregistré localement.');
+        });
+        document.getElementById('resetProfile').addEventListener('click', ()=>{
+            if(!confirm('Réinitialiser les informations du profil ?')) return;
+            localStorage.removeItem(STORAGE_KEY);
+            applyToForm({});
+        });
+
+        // Initialize
+        applyToForm(loadProfile());
+        // live preview
+        ['name','displayName','email','phone','bio'].forEach(id=>document.getElementById(id).addEventListener('input', updatePreview));
+    </script>
+</body>
+</html>

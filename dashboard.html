@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — Nuru Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">ND</div>
+            <span>Nuru Digital</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="entreprises.html">Entreprises</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="connexion.html" class="btn btn-outline btn-sm">Connexion</a>
+            <a href="connexion.html" class="btn btn-primary btn-sm">Créer un compte</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="page-section" style="padding: 4rem 0;">
+        <div class="container">
+            <div class="text-center" style="margin-bottom: 2rem;">
+                <span class="section-label">📈 Tableau de bord</span>
+                <h2 class="section-title">Pilotez votre commerce en un clin d'œil</h2>
+                <p class="section-subtitle">Voici un aperçu des indicateurs que vous pourrez suivre avec Nuru Digital.</p>
+            </div>
+
+            <div class="dashboard-frame">
+                <div class="dashboard-topbar">
+                    <span class="dot red"></span>
+                    <span class="dot amber"></span>
+                    <span class="dot green"></span>
+                    <span class="title">Tableau de bord — Démo Nuru Digital</span>
+                </div>
+                <div class="dashboard-inner">
+                    <div class="stat-card">
+                        <div class="stat-value">8 450</div>
+                        <div class="stat-label">Visiteurs</div>
+                        <div class="stat-change up">▲ +18.5%</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">3 210</div>
+                        <div class="stat-label">Consultations</div>
+                        <div class="stat-change up">▲ +22.1%</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">672</div>
+                        <div class="stat-label">Commandes</div>
+                        <div class="stat-change up">▲ +14.3%</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">$18 900</div>
+                        <div class="stat-label">Chiffre d'affaires</div>
+                        <div class="stat-change up">▲ +27.8%</div>
+                    </div>
+                </div>
+            </div>
+
+            <p style="text-align:center;margin-top:1rem;color:var(--text-lighter);font-size:0.8rem;">
+                ⚠️ Données fictives — prototype conceptuel
+            </p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>Produit</th>
+                            <th>Montant</th>
+                            <th>Date</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Marie K.</td>
+                            <td>Sac artisanal</td>
+                            <td>$45.00</td>
+                            <td>12/06/2026</td>
+                            <td><span class="status-dot active"></span>Livré</td>
+                        </tr>
+                        <tr>
+                            <td>Jean M.</td>
+                            <td>Chaussures cuir</td>
+                            <td>$120.00</td>
+                            <td>11/06/2026</td>
+                            <td><span class="status-dot active"></span>Livré</td>
+                        </tr>
+                        <tr>
+                            <td>Alice T.</td>
+                            <td>Robe wax</td>
+                            <td>$65.00</td>
+                            <td>10/06/2026</td>
+                            <td><span class="status-dot pending"></span>En cours</td>
+                        </tr>
+                        <tr>
+                            <td>Paul L.</td>
+                            <td>Montre connectée</td>
+                            <td>$200.00</td>
+                            <td>09/06/2026</td>
+                            <td><span class="status-dot active"></span>Livré</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Nuru Digital</h4>
+                    <p style="font-size:0.85rem;">La plateforme digitale de tous les commerçants.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens rapides</h4>
+                    <a href="index.html">Accueil</a>
+                    <a href="catalogue.html">Catalogue</a>
+                    <a href="entreprises.html">Entreprises</a>
+                    <a href="a-propos.html">À propos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+            document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
+        }
+    </script>
+</body>
+</html>

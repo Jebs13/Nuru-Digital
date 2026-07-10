@@ -28,6 +28,8 @@
     --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
+/* Dark theme removed: site uses single color scheme */
+
 * {
     margin: 0;
     padding: 0;
@@ -383,6 +385,67 @@ body {
     height: 200%;
     background: radial-gradient(circle, rgba(26,86,219,0.05) 0%, transparent 70%);
     animation: rotate 20s linear infinite;
+}
+
+/* Profile page styles */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 30px;
+    align-items: start;
+}
+.profile-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+.profile-card h3 { margin-bottom: 12px; }
+.profile-card label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+.profile-card input[type="text"],
+.profile-card input[type="email"],
+.profile-card input[type="tel"],
+.profile-card textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-top: 6px;
+    font-size: 0.95rem;
+    color: var(--text);
+    background: transparent;
+}
+.profile-card textarea { min-height: 110px; resize: vertical; }
+.profile-preview {
+    position: relative;
+}
+.preview-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+.preview-hero { display:flex; gap:12px; align-items:center; }
+.preview-avatar {
+    width:64px; height:64px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:800; color:#fff; background: linear-gradient(135deg,#1a56db,#06b6d4);
+    font-size:1.15rem; flex-shrink:0;
+}
+.preview-card h4 { margin:0 0 6px 0; }
+.preview-card p { margin:4px 0; color:var(--text-light); }
+
+@media (max-width: 900px) {
+    .profile-grid { grid-template-columns: 1fr; }
+    .nav-links { gap: 0.8rem; }
 }
 @keyframes rotate {
     to {

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publication — Nuru Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">ND</div>
+            <span>Nuru Digital</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="entreprises.html">Entreprises</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="connexion.html" class="btn btn-outline btn-sm">Connexion</a>
+            <a href="connexion.html" class="btn btn-primary btn-sm">Créer un compte</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-label">📝 Publication</span>
+            <h1>Publiez vos produits ou services</h1>
+            <p>Remplissez ce formulaire pour mettre en ligne votre offre sur Nuru Digital.</p>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="container" style="max-width: 900px; margin: 0 auto;">
+            <div class="card" style="padding: 2rem;">
+                <h2 style="margin-bottom: 1rem;">Créer une nouvelle publication</h2>
+                <p style="margin-bottom: 1.5rem; color: var(--text-light);">Décrivez votre produit ou service pour qu’il apparaisse dans le catalogue.</p>
+
+                <div class="form-group">
+                    <label for="publication-title">Titre de l’offre</label>
+                    <input id="publication-title" type="text" placeholder="Nom du produit ou service">
+                </div>
+                <div class="form-group">
+                    <label for="publication-category">Catégorie</label>
+                    <select id="publication-category">
+                        <option value="boutique">Boutique locale</option>
+                        <option value="agence">Agence marketing</option>
+                        <option value="ecole">École de commerce</option>
+                        <option value="commercant">Commerçant local</option>
+                        <option value="studio">Studio créatif</option>
+                        <option value="atelier">Atelier imprimé</option>
+                        <option value="coach">Coach expert</option>
+                        <option value="startup">Startup tech</option>
+                        <option value="saas">Solution SaaS</option>
+                        <option value="logistique">Logistique</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="publication-label">Label de publication</label>
+                    <select id="publication-label">
+                        <option>Boutique locale</option>
+                        <option>Agence marketing</option>
+                        <option>École de commerce</option>
+                        <option>Commerçant local</option>
+                        <option>Studio créatif</option>
+                        <option>Atelier imprimé</option>
+                        <option>Agence locale</option>
+                        <option>Coach expert</option>
+                        <option>Studio graphique</option>
+                        <option>Créateur local</option>
+                        <option>Agence digitale</option>
+                        <option>Startup tech</option>
+                        <option>Solution SaaS</option>
+                        <option>Logistique</option>
+                        <option>Imprimerie</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="publication-description">Description</label>
+                    <textarea id="publication-description" rows="5" placeholder="Décrivez votre produit ou service..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="publication-price">Prix</label>
+                    <input id="publication-price" type="text" placeholder="Ex: 50 USD">
+                </div>
+                <div class="form-group">
+                    <label for="publication-image">Importer une image</label>
+                    <input id="publication-image" type="file" accept="image/*">
+                </div>
+                <button class="btn btn-primary btn-block" style="margin-top: 1rem;">Publier mon offre</button>
+                <p style="font-size:0.8rem;color:var(--text-light);margin-top:0.8rem;">Cette page est un formulaire de publication fictif. Le contenu n’est pas enregistré en production.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Nuru Digital</h4>
+                    <p style="font-size:0.85rem;">La plateforme digitale de tous les commerçants.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens rapides</h4>
+                    <a href="index.html">Accueil</a>
+                    <a href="catalogue.html">Catalogue</a>
+                    <a href="entreprises.html">Entreprises</a>
+                    <a href="publication.html">Publication</a>
+                    <a href="a-propos.html">À propos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+            document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
+        }
+    </script>
+</body>
+</html>
