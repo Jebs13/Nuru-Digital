@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion — Nuru Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">ND</div>
+            <span>Nuru Digital</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="entreprises.html">Entreprises</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="connexion.html" class="btn btn-outline btn-sm">Connexion</a>
+            <a href="connexion.html" class="btn btn-primary btn-sm">Créer un compte</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="page-section">
+        <div class="container auth-shell">
+            <div class="auth-card">
+                <input type="radio" name="auth-tabs" id="tab-login" class="tab-radio" checked>
+                <input type="radio" name="auth-tabs" id="tab-register" class="tab-radio">
+                <div class="tab-labels">
+                    <label for="tab-login">Connexion</label>
+                    <label for="tab-register">Inscription</label>
+                </div>
+                <div class="tab-content tab-content-login">
+                    <h2>🔐 Connexion</h2>
+                    <p class="auth-subtitle">Accédez à votre espace Nuru Digital</p>
+                    <div class="form-group"><label>Email</label><input type="email" placeholder="vous@exemple.com"></div>
+                    <div class="form-group"><label>Mot de passe</label><input type="password" placeholder="••••••••"></div>
+                    <button class="btn btn-primary btn-block">Se connecter</button>
+                    <p class="auth-footer">Pas encore de compte ? <label for="tab-register">Inscrivez-vous</label></p>
+                </div>
+                <div class="tab-content tab-content-register">
+                    <h2>✨ Inscription gratuite</h2>
+                    <p class="auth-subtitle">Créez votre compte Nuru Digital</p>
+                    <div class="form-group"><label>Nom de votre commerce</label><input type="text" placeholder="Nom de votre boutique / entreprise"></div>
+                    <div class="form-group"><label>Type d'activité</label>
+                        <select>
+                            <option>Petit commerçant</option><option>Commerce de proximité</option>
+                            <option>Entrepreneur / Freelance</option><option>PME</option><option>Grande entreprise</option>
+                        </select>
+                    </div>
+                    <div class="form-group"><label>Email</label><input type="email" placeholder="contact@votreboutique.cd"></div>
+                    <div class="form-group"><label>Mot de passe</label><input type="password" placeholder="Minimum 8 caractères"></div>
+                    <button class="btn btn-primary btn-block">Créer mon compte</button>
+                    <p class="auth-footer">Déjà inscrit ? <label for="tab-login">Connectez-vous</label></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Nuru Digital</h4>
+                    <p style="font-size:0.85rem;">La plateforme digitale de tous les commerçants.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens rapides</h4>
+                    <a href="index.html">Accueil</a>
+                    <a href="catalogue.html">Catalogue</a>
+                    <a href="entreprises.html">Entreprises</a>
+                    <a href="a-propos.html">À propos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+            document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
+        }
+    </script>
+</body>
+</html>

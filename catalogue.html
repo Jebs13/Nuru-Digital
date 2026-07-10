@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue — Nuru Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">ND</div>
+            <span>Nuru Digital</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html" class="active">Catalogue</a></li>
+            <li><a href="entreprises.html">Entreprises</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="a-propos.html">À propos</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="connexion.html" class="btn btn-outline btn-sm">Connexion</a>
+            <a href="connexion.html" class="btn btn-primary btn-sm">Créer un compte</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-label">🛍️ Catalogue</span>
+            <h1>Des ressources et services à acheter pour développer votre commerce.</h1>
+            <p>Choisissez parmi des articles marketing, formations et solutions digitales adaptées aux commerçants et aux entreprises.</p>
+        </div>      
+    </section>
+    <section class="page-section">
+        <div class="container">
+            <div class="catalogue-filters">
+                <label for="catalogueFilter">Filtrer par service :</label>
+                <select id="catalogueFilter">
+                    <option value="all">Tous les services</option>
+                    <option value="marchandises"></option>
+                    <option value="formations">Formations</option>
+                </select>
+            </div>
+
+            <div class="page-grid">
+                <article class="product-card" data-category="marchandises">
+                    <img src="https://via.placeholder.com/640x360?text=Sac+artisanal" alt="Sac artisanal premium">
+                    <div class="meta">
+                        <span class="product-title">Sac artisanal premium</span>
+                        <span class="status-pill">Boutique locale</span>
+                    </div>
+                    <p>Produit fabriqué localement, disponible en plusieurs couleurs et finitions.</p>
+                    <div class="price-tag">Prix : 50 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Voir l’article</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Ajouter au panier</a>
+                    </div>
+                </article>
+                <article class="product-card" data-category="agences">
+                    <img src="https://via.placeholder.com/640x360?text=Pack+branding" alt="Pack branding entreprise">
+                    <div class="meta">
+                        <span class="product-title">Pack branding entreprise</span>
+                        <span class="status-pill">Agence marketing</span>
+                    </div>
+                    <p>Service complet de création d’identité visuelle et supports marketing.</p>
+                    <div class="price-tag">Prix : 220 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Voir l’offre</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Demander</a>
+                    </div>
+                </article>
+                <article class="product-card" data-category="formations">
+                    <img src="https://via.placeholder.com/640x360?text=Formation+vente+digitale" alt="Formation vente digitale">
+                    <div class="meta">
+                        <span class="product-title">Formation vente digitale</span>
+                        <span class="status-pill">École de commerce</span>
+                    </div>
+                    <p>Formation pratique pour apprendre à vendre en ligne et améliorer ses résultats.</p>
+                    <div class="price-tag">Prix : 75 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Réserver</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Voir les infos</a>
+                    </div>
+                </article>
+                <article class="product-card" data-category="marchandises">
+                    <img src="https://via.placeholder.com/640x360?text=Cosm%C3%A9tique+naturel" alt="Cosmétique naturel">
+                    <div class="meta">
+                        <span class="product-title">Cosmétique naturel</span>
+                        <span class="status-pill">Commerçant local</span>
+                    </div>
+                    <p>Sérum visage bio fabriqué à partir d’ingrédients locaux pour une peau éclatante.</p>
+                    <div class="price-tag">Prix : 32 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Voir l’article</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Ajouter au panier</a>
+                    </div>
+                </article>
+                <article class="product-card" data-category="formations">
+                    <img src="https://via.placeholder.com/640x360?text=Cours+photo+marketing" alt="Cours photo marketing">
+                    <div class="meta">
+                        <span class="product-title">Cours photo marketing</span>
+                        <span class="status-pill">Studio créatif</span>
+                    </div>
+                    <p>Apprenez à photographier vos produits pour booster votre boutique en ligne.</p>
+                    <div class="price-tag">Prix : 65 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Réserver</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Voir les infos</a>
+                    </div>
+                </article>
+                <article class="product-card" data-category="marchandises">
+                    <img src="https://via.placeholder.com/640x360?text=Pack+%C3%A9tiquettes" alt="Pack étiquettes produits">
+                    <div class="meta">
+                        <span class="product-title">Pack étiquettes produits</span>
+                        <span class="status-pill">Atelier imprimé</span>
+                    </div>
+                    <p>Ensemble de 50 étiquettes personnalisées pour vos emballages et produits.</p>
+                    <div class="price-tag">Prix : 25 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Voir l’offre</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Ajouter au panier</a>
+                    </div>
+                </article>
+                <article class="product-card" data-category="agences">
+                    <img src="https://via.placeholder.com/640x360?text=Publicit%C3%A9+locale" alt="Campagne publicité locale">
+                    <div class="meta">
+                        <span class="product-title">Campagne publicité locale</span>
+                        <span class="status-pill">Agence locale</span>
+                    </div>
+                    <p>Publicité ciblée sur les réseaux sociaux pour attirer plus de clients dans votre zone.</p>
+                    <div class="price-tag">Prix : 130 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Voir l’offre</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Demander</a>
+                    </div>
+                </article>
+                <article class="product-card" data-category="formations">
+                    <img src="https://via.placeholder.com/640x360?text=Coaching+commercial" alt="Coaching commercial">
+                    <div class="meta">
+                        <span class="product-title">Coaching commercial</span>
+                        <span class="status-pill">Coach expert</span>
+                    </div>
+                    <p>Accompagnement individuel pour améliorer votre offre et vos ventes.</p>
+                    <div class="price-tag">Prix : 90 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Réserver</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Voir les infos</a>
+                    </div>
+                </article>
+                <article class="product-card" data-category="agences">
+                    <img src="https://via.placeholder.com/640x360?text=Design+menu+catalogue" alt="Design menu & catalogue">
+                    <div class="meta">
+                        <span class="product-title">Design menu & catalogue</span>
+                        <span class="status-pill">Studio graphique</span>
+                    </div>
+                    <p>Création de menus et catalogues attractifs pour restaurants, boutiques et services.</p>
+                    <div class="price-tag">Prix : 50 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Voir l’offre</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Demander</a>
+                    </div>
+                </article>
+                <article class="product-card" data-category="marchandises">
+                    <img src="https://via.placeholder.com/640x360?text=Bo% C3%AEte+cadeau" alt="Boîte cadeau artisanale">
+                    <div class="meta">
+                        <span class="product-title">Boîte cadeau artisanale</span>
+                        <span class="status-pill">Créateur local</span>
+                    </div>
+                    <p>Collection d’articles faits main pour offrir une expérience locale unique.</p>
+                    <div class="price-tag">Prix : 42 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Voir l’article</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Ajouter au panier</a>
+                    </div>
+                </article>
+                <article class="product-card" data-category="agences">
+                    <img src="https://via.placeholder.com/640x360?text=Consultation+marketing" alt="Consultation marketing express">
+                    <div class="meta">
+                        <span class="product-title">Consultation marketing express</span>
+                        <span class="status-pill">Agence digitale</span>
+                    </div>
+                    <p>Session rapide pour optimiser vos campagnes et votre positionnement en ligne.</p>
+                    <div class="price-tag">Prix : 55 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Réserver</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Voir les infos</a>
+                    </div>
+                </article>
+                <article class="product-card" data-category="agences">
+                    <img src="https://via.placeholder.com/640x360?text=Kit+e-commerce" alt="Kit de démarrage e-commerce">
+                    <div class="meta">
+                        <span class="product-title">Kit de démarrage e-commerce</span>
+                        <span class="status-pill">Startup tech</span>
+                    </div>
+                    <p>Offre de lancement pour créer et lancer rapidement une boutique en ligne performante.</p>
+                    <div class="price-tag">Prix : 95 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Voir l’offre</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Ajouter au panier</a>
+                    </div>
+                </article>
+                <article class="product-card" data-category="marchandises">
+                    <img src="https://via.placeholder.com/640x360?text=Outil+de+gestion+stock" alt="Outil de gestion stock">
+                    <div class="meta">
+                        <span class="product-title">Outil de gestion stock</span>
+                        <span class="status-pill">Solution SaaS</span>
+                    </div>
+                    <p>Application simple pour suivre vos entrées, sorties et niveaux de stock en temps réel.</p>
+                    <div class="price-tag">Prix : 35 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Voir l’offre</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Demander</a>
+                    </div>
+                </article>
+                <article class="product-card" data-category="marchandises">
+                    <img src="https://via.placeholder.com/640x360?text=Livraison+express" alt="Service livraison express">
+                    <div class="meta">
+                        <span class="product-title">Service livraison express</span>
+                        <span class="status-pill">Logistique</span>
+                    </div>
+                    <p>Livraison locale rapide pour vos clients, compatible boutiques physiques et e-shop.</p>
+                    <div class="price-tag">Prix : 18 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Voir l’offre</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Ajouter au panier</a>
+                    </div>
+                </article>
+                <article class="product-card" data-category="agences">
+                    <img src="https://via.placeholder.com/640x360?text=Atelier+logo" alt="Atelier création logo">
+                    <div class="meta">
+                        <span class="product-title">Atelier création logo</span>
+                        <span class="status-pill">Agence créative</span>
+                    </div>
+                    <p>Workshop pour créer un logo représentant l’identité de votre entreprise.</p>
+                    <div class="price-tag">Prix : 80 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Voir l’offre</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Réserver</a>
+                    </div>
+                </article>
+                <article class="product-card" data-category="marchandises">
+                    <img src="https://via.placeholder.com/640x360?text=Signal%C3%A9tique+boutique" alt="Pack signalétique boutique">
+                    <div class="meta">
+                        <span class="product-title">Pack signalétique boutique</span>
+                        <span class="status-pill">Imprimerie</span>
+                    </div>
+                    <p>Affiches, stickers et panneaux pour valoriser votre vitrine et vos promotions.</p>
+                    <div class="price-tag">Prix : 60 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Voir l’offre</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Demander</a>
+                    </div>
+                </article>
+                <article class="product-card" data-category="agences">
+                    <img src="https://via.placeholder.com/640x360?text=Produits+sponsoris%C3%A9s" alt="Publicité produits sponsorisés">
+                    <div class="meta">
+                        <span class="product-title">Publicité produits sponsorisés</span>
+                        <span class="status-pill">Agence digitale</span>
+                    </div>
+                    <p>Campagne sponsorisée pour mettre vos produits en avant auprès d’un public qualifié.</p>
+                    <div class="price-tag">Prix : 120 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Voir l’offre</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Demander</a>
+                    </div>
+                </article>
+                <article class="product-card" data-category="formations">
+                    <img src="https://via.placeholder.com/640x360?text=Webinaire+publicit%C3%A9" alt="Webinaire publicité digitale">
+                    <div class="meta">
+                        <span class="product-title">Webinaire publicité digitale</span>
+                        <span class="status-pill">Expert digital</span>
+                    </div>
+                    <p>Participation à un webinaire pour maîtriser vos campagnes Facebook et Instagram.</p>
+                    <div class="price-tag">Prix : 20 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Réserver</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Voir les infos</a>
+                    </div>
+                </article>
+                <article class="product-card" data-category="agences">
+                    <img src="https://via.placeholder.com/640x360?text=Photographie+produit" alt="Service de photographie produit">
+                    <div class="meta">
+                        <span class="product-title">Service de photographie produit</span>
+                        <span class="status-pill">Photographe pro</span>
+                    </div>
+                    <p>Session photo pour valoriser vos produits en ligne avec des visuels professionnels.</p>
+                    <div class="price-tag">Prix : 90 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Voir l’offre</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Réserver</a>
+                    </div>
+                </article>
+                <article class="product-card" data-category="agences">
+                    <img src="https://via.placeholder.com/640x360?text=Vid%C3%A9o+promotionnelle" alt="Publicité vidéo courte">
+                    <div class="meta">
+                        <span class="product-title">Publicité vidéo courte</span>
+                        <span class="status-pill">Studio vidéo</span>
+                    </div>
+                    <p>Vidéo promotionnelle courte pour mettre en valeur votre produit sur les réseaux.</p>
+                    <div class="price-tag">Prix : 110 USD</div>
+                    <div class="page-actions">
+                        <a href="connexion.html" class="btn btn-primary btn-sm">Voir l’offre</a>
+                        <a href="connexion.html" class="btn btn-outline btn-sm">Demander</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Nuru Digital</h4>
+                    <p style="font-size:0.85rem;">La plateforme digitale de tous les commerçants.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens rapides</h4>
+                    <a href="index.html">Accueil</a>
+                    <a href="catalogue.html">Catalogue</a>
+                    <a href="entreprises.html">Entreprises</a>
+                    <a href="a-propos.html">À propos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+            document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
+        }
+
+        const filterSelect = document.getElementById('catalogueFilter');
+        const productCards = Array.from(document.querySelectorAll('.product-card'));
+        if (filterSelect) {
+            filterSelect.addEventListener('change', () => {
+                const selected = filterSelect.value;
+                productCards.forEach(card => {
+                    card.style.display = selected === 'all' || card.dataset.category === selected ? 'flex' : 'none';
+                });
+            });
+        }
+    </script>
+</body>
+</html>

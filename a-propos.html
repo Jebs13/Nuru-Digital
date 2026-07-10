@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos — Nuru Digital</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <div class="logo-icon">ND</div>
+            <span>Nuru Digital</span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="a-propos.html" class="active">À propos</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="connexion.html" class="btn btn-outline btn-sm">Connexion</a>
+            <a href="connexion.html" class="btn btn-primary btn-sm">Créer un compte</a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-label">ℹ️ À propos</span>
+            <h1>Nous aidons les commerçants à vendre, se faire connaître et grandir.</h1>
+            <p>Nuru Digital rassemble les outils essentiels pour comprendre ses clients, créer une présence digitale solide et développer sa clientèle avec simplicité.</p>
+        </div>
+    </section>
+
+    <section class="page-section">
+        <div class="container">
+            <div class="grid-2">
+                <article class="page-card">
+                    <h3>Pour qui ?</h3>
+                    <p>Petits commerçants, boutiques locales, entrepreneurs, PME et grandes entreprises qui souhaitent mieux vendre et mieux se positionner.</p>
+                    <ul class="page-list">
+                        <li>Vendeurs de marché et boutiquiers</li>
+                        <li>Commerces de proximité</li>
+                        <li>Créateurs, freelances et artisans</li>
+                        <li>PME et grandes entreprises</li>
+                    </ul>
+                </article>
+                <article class="page-card">
+                    <h3>Nos services</h3>
+                    <p>Des services pratiques pour la visibilité, la vente et l’accompagnement quotidien.</p>
+                    <ul class="page-list">
+                        <li>Visibilité digitale et branding</li>
+                        <li>Gestion des commandes et suivi</li>
+                        <li>Formations marketing adaptées</li>
+                        <li>Support et accompagnement local</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Nuru Digital</h4>
+                    <p style="font-size:0.85rem;">La plateforme digitale de tous les commerçants.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Liens rapides</h4>
+                    <a href="index.html">Accueil</a>
+                    <a href="catalogue.html">Catalogue</a>
+                    <a href="entreprises.html">Entreprises</a>
+                    <a href="a-propos.html">À propos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+            document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
+        }
+    </script>
+</body>
+</html>
